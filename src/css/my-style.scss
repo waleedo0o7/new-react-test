@@ -1,0 +1,57 @@
+section , footer#footer{
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0 ;
+}
+
+.width100{
+    width: 100%;
+}
+
+#top-menu , footer#footer {
+    background: #3b3b56;
+    min-height: auto;
+}
+
+
+#page-content {
+    background-color: rgb(220, 219, 230);
+
+    section#intro {
+        background: url(../images/intro.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        min-height: 80vh;
+        h1 {
+            color: #fff;
+            font-size: 72px;
+            text-shadow: 0 0 10px #242424;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+    }
+    section#about-us {
+        background: #dfddff;
+    }
+
+    section#jobs-section {
+        background: #e9ecef;
+        .one-job {
+            background: #fff;
+            padding: 15px;
+        }
+    }
+}
+
+footer#footer{
+    padding: 15px;
+    p {
+        color: #fff;
+        text-transform: capitalize;
+        margin-bottom: 0px;
+    }
+}

@@ -1,0 +1,56 @@
+section, footer#footer {
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+}
+
+.width100 {
+  width: 100%;
+}
+
+#top-menu, footer#footer {
+  background: #3b3b56;
+  min-height: auto;
+}
+
+#page-content {
+  background-color: #dcdbe6;
+}
+#page-content section#intro {
+  background: url(../images/intro.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 80vh;
+}
+#page-content section#intro h1 {
+  color: #fff;
+  font-size: 72px;
+  text-shadow: 0 0 10px #242424;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+#page-content section#about-us {
+  background: #dfddff;
+}
+#page-content section#jobs-section {
+  background: #e9ecef;
+}
+#page-content section#jobs-section .one-job {
+  background: #fff;
+  padding: 15px;
+}
+
+footer#footer {
+  padding: 15px;
+}
+footer#footer p {
+  color: #fff;
+  text-transform: capitalize;
+  margin-bottom: 0px;
+}
+
+/*# sourceMappingURL=my-style.css.map */
