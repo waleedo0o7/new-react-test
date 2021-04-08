@@ -7,43 +7,24 @@ class App extends React.Component {
 
   componentDidMount = () => {
     this.getData();
-    this.getOrders();
   }
 
   getData() {
-    fetch("https://jsonplaceholder.typicode.com/todos", {
+    fetch("https://reqres.in/api/users", {
       method: "GET",
       headers: { "Content-Type": "application/json" }
     }).then(e => {
       return e.json();
     }).then(res => {
-      //console.log(res);
-      this.setState({ items: res })
+      this.setState({ users: res.data })
     })
   }
-
-  getOrders() {
-    fetch("http://localhost:3000/data.json", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" }
-    }).then(e => {
-      return e.json();
-    }).then(res => {
-      // console.log(res.items[8]);
-      this.setState({ orders: [res] });
-    })
-  }
-
-  // getOrderDyId(id){
-  //   this.state.orders.items[id]
-  // }
-
 
   state = {
     name: "02 020 20 20 20",
     age: 16,
     items: [],
-    orders : []
+    users : []
   }
 
   render() {
@@ -103,34 +84,17 @@ class App extends React.Component {
               <div className="all-jobs">
                 <div className="row">
 
-                  {this.state.items.map((item, index) => {
+                  {this.state.users.map((item, index) => {
 
-                    if (item.completed === false) {
-                      var isCompleted = " it's completed "
-                      var isCompletedClass = "green"
-                    } else {
-                      var isCompleted = " NOT completed yet "
-                      var isCompletedClass = "red"
-                    }
-
-                    if (index < 9) {
+ 
 
                       return (
                         <div className="col-md-4 mb-3">
-                          <div className="one-job" id={index} key={index}>
-                            <div className="image">
-                              <img className="img-fluid" src="images/company-logo.jpg" alt="" />
-                            </div>
-                            <div className="job-detials">
-                              <p> user Id  :  {item.userId}  </p>
-                              <p> id : {item.id} </p>
-                              <p> title : {item.title} </p>
-                              <p className={isCompletedClass}> completed : {isCompleted} </p>
-                            </div>
-                          </div>
+
+                          {item.id}
+
                         </div>
-                      )
-                    }
+                      ) 
 
                   })}
 
@@ -139,40 +103,6 @@ class App extends React.Component {
                 </div>
               </div>
             </div>
-          </section>
-          {/* <section id="send-task">
-            <div className="container">
-              <form>
-                <input placeholder="userId" className="form-control" id="userId" />
-                <input placeholder="id" className="form-control" id="id" />
-                <input placeholder="taskTitle" className="form-control" id="taskTitle" />
-                <input placeholder="isCompleted" className="form-control" id="isCompleted" />
-                <button id="submit" className="btn btn-primary btn-block"> Send </button>
-              </form>
-            </div>
-          </section> */}
-
-
-          <section id="send-task">
-            <div className="container">
-              <form>
-                <input placeholder="pilot id" className="form-control" id="pilotId" />
-                <button id="submit" className="btn btn-primary btn-block"> Send </button>
-
-                {this.state.orders.map((item, index) => {
-                  return (
-                    <div className="col-md-4 mb-3">
-                      {item.items[5].customer_firstname}
-                      <p> customer name : 11111 2222 </p>
-                      <p> sku : 11111 2222 </p>
-                      <p> Number Of Items : 11111 2222 </p>
-                      <p> total Price : 11111 2222 </p>
-                    </div>
-                  )
-                })}
-              </form>
-            </div>
-
           </section>
 
         </div>
